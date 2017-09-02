@@ -1,0 +1,17 @@
+{
+  "name": "drawable",
+  "version": "0.0.1",
+  "description":
+    "A universal canvas implmentation to create images that are configurable.",
+  "main": "index.js",
+  "author": "Jacob Lowe",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc"
+  },
+  "dependencies": {
+    "canvas": "^1.6.6",
+    "image-size": "^0.6.1",
+    "r2": "^1.0.0"
+  }
+}
