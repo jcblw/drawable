@@ -13,7 +13,7 @@ npi i drawable --save
 ```javascript
 import Drawable from 'drawable'
 
-const drawable = new Drawable({ width: 200, height: 200 });
+const drawable = new Drawable({ width: 200, height: 200, backgroundColor: 'white' });
 
 drawable.addFont('../font/path.ttf', 'Fake font');
 
@@ -30,3 +30,10 @@ drawable.append([image, text]);
 
 console.log(drawable.toBuffer());
 ```
+
+## TODO
+
+- make api work on both client and server
+- solidify output methods `toBuffer` and `toDataURI`
+- make a public way to expose canvas element ( for appending to DOM )
+- make a few adapters to work with react and ember
