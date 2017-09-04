@@ -36,10 +36,12 @@ export default class Text {
 
   getSideMargin(text, canvasWidth, context) {
     const align = this._styles.textAlign || 'left';
+    const left = this.getStyleProp('left');
+    const right = this.getStyleProp('right');
     switch (align) {
       case 'center': {
         const { width } = context.measureText(text);
-        return (canvasWidth - width - this.getStyleProp('right')) / 2;
+        return (canvasWidth - width + left - right) / 2;
       }
       case 'right': {
         const { width } = context.measureText(text);

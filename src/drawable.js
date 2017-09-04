@@ -38,6 +38,7 @@ export default class Drawable {
       this.verifyChild
     );
     this._children = this._children.concat(elements);
+    console.log(this._children);
     if (lazy || !elements.length) return Promise.resolve();
     return this.draw();
   }
@@ -47,16 +48,28 @@ export default class Drawable {
     this.createCanvas(); // need to recreate canvas afte registering font
   }
 
+  drawChild(child) {
+    return () =>
+      new Promise(resolve => {
+        const ret = child.draw(this._context, this._options);
+        const isPromise = ret && typeof ret.then === 'function';
+        return isPromise ? ret.then(resolve) : resolve();
+      });
+  }
+
   // draw is async because of the promise wrapping
   draw() {
-    return Promise.all(
-      this._children.map(child => {
-        return new Promise(resolve => {
-          child.draw(this._context, this._options);
-          resolve();
-        });
-      })
-    );
+    const context = this._context;
+    const { backgroundColor, width, height } = this._options;
+    if (backgroundColor) {
+      context.fillStyle = backgroundColor;
+      context.fillRect(0, 0, width, height);
+    }
+    return this._children
+      .map(child => this.drawChild(child))
+      .reduce((promise, draw) => {
+        return promise.then(() => draw());
+      }, Promise.resolve());
   }
 
   toBuffer() {
