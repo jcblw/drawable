@@ -42,8 +42,8 @@ export default class Drawable {
     return this.draw();
   }
 
-  addFont(name, path) {
-    registerFont(path, { name });
+  addFont(family, path) {
+    registerFont(path, { family });
     this.createCanvas(); // need to recreate canvas afte registering font
   }
 

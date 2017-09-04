@@ -2,9 +2,11 @@ const Drawable = require('../dist').default;
 const fs = require('fs');
 const path = require('path');
 
-console.log(Drawable);
-
 const drawable = new Drawable({ width: 500, height: 500 });
+
+console.log(path.resolve(__dirname, './Roboto-Regular.ttf'));
+
+drawable.addFont('Roboto', path.resolve(__dirname, './Roboto-Regular.ttf'));
 
 const text = Drawable.text('hello world this is a program', {
   textAlign: 'center',
@@ -13,6 +15,7 @@ const text = Drawable.text('hello world this is a program', {
   right: 20,
   fontSize: 50,
   lineHeight: 60,
+  fontFamily: 'Roboto',
 });
 
 drawable.append([text]).then(() => {
