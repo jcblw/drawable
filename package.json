@@ -1,17 +1,21 @@
 {
   "name": "drawable",
   "version": "0.0.1",
-  "description":
-    "A universal canvas implmentation to create images that are configurable.",
+  "description": "A universal canvas implmentation to create images that are configurable.",
   "main": "index.js",
   "author": "Jacob Lowe",
   "license": "MIT",
   "scripts": {
-    "build": "tsc"
+    "build": "babel src --out-dir dist",
+    "watch": "babel src --out-dir dist --watch"
   },
   "dependencies": {
-    "canvas": "^1.6.6",
+    "canvas": "2.0.0-aplha.4",
     "image-size": "^0.6.1",
     "r2": "^1.0.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.26.0"
   }
 }
