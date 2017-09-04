@@ -1,6 +1,8 @@
 # Drawable
 
-Drawable is universal js lib that will allow you to create images server or client side with the same api.
+A way to make styling canvas elements like text and images nicer. This lib uses `node-canvas`, please see instructions on [how to get this working](https://github.com/Automattic/node-canvas#installation) on your computer.
+
+> This is currently in some flux, and currently only works on a node server
 
 ```
 npi i drawable --save
@@ -13,20 +15,18 @@ import Drawable from 'drawable'
 
 const drawable = new Drawable({ width: 200, height: 200 });
 
-drawable.addFont('../font/path');
+drawable.addFont('../font/path.ttf', 'Fake font');
 
 const image = Drawable.image('../../image/path', { top: 0, left: 0 });
 const text = Drawable.text('foo bar', {
   textAlign: 'center',
   top: 20,
   left: 20,
-  fontSize: 12
+  fontSize: 12,
+  fontFamily: 'Fake font'
 });
 
-drawable.append(image);
-drawable.append(text);
+drawable.append([image, text]);
 
-text.style({ textAlign: 'left' });
-
-
+console.log(drawable.toBuffer());
 ```

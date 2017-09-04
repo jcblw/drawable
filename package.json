@@ -1,7 +1,8 @@
 {
   "name": "drawable",
-  "version": "0.0.1",
-  "description": "A universal canvas implmentation to create images that are configurable.",
+  "version": "0.1.0",
+  "description":
+    "A way to make styling canvas elements like text and images nicer",
   "main": "index.js",
   "author": "Jacob Lowe",
   "license": "MIT",
@@ -11,8 +12,7 @@
   },
   "dependencies": {
     "canvas": "2.0.0-aplha.4",
-    "image-size": "^0.6.1",
-    "r2": "^1.0.0"
+    "image-size": "^0.6.1"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
