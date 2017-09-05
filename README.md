@@ -5,7 +5,7 @@ A way to make styling canvas elements like text and images nicer. This lib uses 
 > This is currently in some flux, and currently only works on a node server
 
 ```
-npi i drawable --save
+npm i drawable --save
 ```
 
 ## Usage

@@ -10,7 +10,7 @@ export default class Drawable {
 
   createCanvas() {
     const { width, height } = this._options;
-    this._canvas = createCanvas(width, height);
+    this._canvas = createCanvas(width || 0, height || 0);
     this._context = this._canvas.getContext('2d');
   }
 
@@ -38,14 +38,13 @@ export default class Drawable {
       this.verifyChild
     );
     this._children = this._children.concat(elements);
-    console.log(this._children);
     if (lazy || !elements.length) return Promise.resolve();
     return this.draw();
   }
 
   addFont(family, path) {
     registerFont(path, { family });
-    this.createCanvas(); // need to recreate canvas afte registering font
+    this.createCanvas(); // need to recreate canvas after registering font
   }
 
   drawChild(child) {

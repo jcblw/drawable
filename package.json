@@ -3,19 +3,23 @@
   "version": "0.1.0",
   "description":
     "A way to make styling canvas elements like text and images nicer",
-  "main": "index.js",
+  "main": "dist/index.js",
   "author": "Jacob Lowe",
   "license": "MIT",
   "scripts": {
     "build": "babel src --out-dir dist",
-    "watch": "babel src --out-dir dist --watch"
+    "watch": "babel src --out-dir dist --watch",
+    "test": "npm run build && ava tests/*.test.js",
+    "prepublish": "npm run build"
   },
   "dependencies": {
     "canvas": "2.0.0-aplha.4",
     "image-size": "^0.6.1"
   },
   "devDependencies": {
+    "ava": "^0.22.0",
     "babel-cli": "^6.26.0",
-    "babel-plugin-transform-es2015-modules-commonjs": "^6.26.0"
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.26.0",
+    "mock-require": "^2.0.2"
   }
 }
