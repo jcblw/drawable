@@ -82,14 +82,19 @@ const image = Drawable.image('./path/to/image.jpg', {
 drawable.append(image);
 ```
 
-Now there is currently only a very simple version of `image` working. This is going to be expanded to support things like [object-fit](https://www.w3.org/TR/css3-images/#object-fit) to be able to do some magic to position the image correctly. Help wanted :D
+Images are pretty basic, you give the image a left and top coordinate and it should render. If you are trying to emulate something like a background image you could also use the `objectFit` style which should allow you to `cover` or `contain` the image in the canvas.
 
-##### Styles for text
+##### Styles for image
 
-| Styles key | Description                      | Default    |
-|------------|----------------------------------|------------|
-| top        | The top alignment of the image   | 0          |
-| left       | The left alignment of the image  | 0          |
+| Styles key | Description                                                                                                                      | Default       |
+|------------|----------------------------------------------------------------------------------------------------------------------------------|---------------|
+| top        | The top alignment of the image                                                                                                   | 0             |
+| left       | The left alignment of the image                                                                                                  | 0             |
+| width      | The width of the image                                                                                                           | images.width  |
+| height     | The height of the image                                                                                                          | images.height |
+| objectFit  | [object-fit css](https://developer.mozilla.org/en-US/docs/Web/CSS/object-fit) current values supported are "cover" and "contain" | none          |
+
+> Note: when using object fit it will override the left, top, width, and height values.
 
 
 ## TODO
