@@ -1,5 +1,7 @@
 # Drawable
 
+[![Build Status](https://travis-ci.org/jcblw/drawable.svg?branch=master)](https://travis-ci.org/jcblw/drawable)
+
 A way to make styling canvas elements like text and images nicer. This lib uses `node-canvas`, please see instructions on [how to get this working](https://github.com/Automattic/node-canvas#installation) on your computer.
 
 > This is currently in some flux, and currently only works on a node server
