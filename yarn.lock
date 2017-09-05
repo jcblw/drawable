@@ -704,7 +704,7 @@ camelcase@^4.0.0:
   version "4.1.0"
   resolved "https://registry.yarnpkg.com/camelcase/-/camelcase-4.1.0.tgz#d545635be1e33c542649c69173e5de6acfae34dd"
 
-canvas@2.0.0-aplha.4:
+canvas@2.0.0-alpha.4:
   version "2.0.0-alpha.4"
   resolved "https://registry.yarnpkg.com/canvas/-/canvas-2.0.0-alpha.4.tgz#a4c8ad09c2f7d5c562a1cebc740c4fee23f08bbd"
   dependencies:

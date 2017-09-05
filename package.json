@@ -13,7 +13,7 @@
     "prepublish": "npm run build"
   },
   "dependencies": {
-    "canvas": "2.0.0-aplha.4",
+    "canvas": "2.0.0-alpha.4",
     "image-size": "^0.6.1"
   },
   "devDependencies": {
