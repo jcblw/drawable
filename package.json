@@ -6,7 +6,7 @@
   "author": "Jacob Lowe",
   "license": "MIT",
   "scripts": {
-    "build": "babel src --out-dir dist",
+    "build": "rm -rf dist && babel src --out-dir dist",
     "watch": "babel src --out-dir dist --watch",
     "test": "npm run build && ava tests/*.test.js",
     "prepublish": "npm run build"
