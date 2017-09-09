@@ -1,8 +1,7 @@
 {
   "name": "drawable",
-  "version": "0.2.0",
-  "description":
-    "A way to make styling canvas elements like text and images nicer",
+  "version": "0.2.1",
+  "description": "A way to make styling canvas elements like text and images nicer",
   "main": "dist/index.js",
   "author": "Jacob Lowe",
   "license": "MIT",
@@ -20,6 +19,10 @@
     "ava": "^0.22.0",
     "babel-cli": "^6.26.0",
     "babel-plugin-transform-es2015-modules-commonjs": "^6.26.0",
-    "mock-require": "^2.0.2"
-  }
+    "mock-require": "^2.0.2",
+    "nyc": "^11.2.1"
+  },
+  "files": [
+    "dist"
+  ]
 }
