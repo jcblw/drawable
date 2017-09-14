@@ -1,16 +1,25 @@
 import Canvas from 'canvas';
 import sizeOf from 'image-size';
-const { loadImage } = Canvas;
+import isBuffer from 'is-buffer';
+
+const { loadImage, Image } = Canvas;
 
 export default class DrawableImage {
   constructor(img, styles = {}) {
-    this._img = img;
+    // be able to set image buffer
+    if (isBuffer(img)) {
+      this._image = new Image
+      this._image.src = img;
+      this._dimensions = sizeOf(img);
+    } else {
+      this._img = img;
+    }
     this._styles = styles;
   }
 
   loadImage() {
     return loadImage(this._img).then(image => {
-      this._dimensions = sizeOf(this._img);
+      this._dimensions = sizeOf(image);
       this._image = image;
     });
   }
