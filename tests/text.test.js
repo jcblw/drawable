@@ -4,7 +4,7 @@ const DrawableText = require('../dist/text').default;
 
 test('the DrawableText exports', t => {
   t.is(
-    typeof DrawableImage,
+    typeof DrawableText,
     'function',
     'Drawable export is a constructor function'
   );
