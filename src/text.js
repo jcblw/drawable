@@ -34,6 +34,26 @@ export default class Text {
     return this._styles[prop] || 0;
   }
 
+  setStyleProp(prop = '', value) {
+    this._styles[prop] = value;
+  }
+
+  setupContextFonts(context) {
+    const fontSize = this.getStyleProp('fontSize');
+    const fontFamily = this.getStyleProp('fontFamily') || 'sans-serif';
+    const color = this.getStyleProp('color') || '#222';
+    context.textBaseline = 'top';
+    context.font = `normal normal ${fontSize}px ${fontFamily}`;
+    context.fillStyle = color;
+  }
+
+  getTextHeight({ canvasStyles, _context: context }) {
+    const { width } = canvasStyles;
+    this.setupContextFonts(context);
+    const lines = this.getLines(context, this.getMaxWidth(width));
+    return lines.length * this.getStyleProp('lineHeight');
+  }
+
   getSideMargin(text, canvasWidth, context) {
     const align = this._styles.textAlign || 'left';
     const left = this.getStyleProp('left');
@@ -56,10 +76,7 @@ export default class Text {
   draw(context, canvasStyles = {}) {
     const { width: canvasWidth } = canvasStyles;
 
-    context.textBaseline = 'top';
-    context.font = `normal normal ${this.getStyleProp('fontSize')}px ${this
-      ._styles.fontFamily || 'sans-serif'}`;
-    context.fillStyle = this._styles.color || '#222';
+    this.setupContextFonts(context);
 
     const lines = this.getLines(context, this.getMaxWidth(canvasWidth));
 
