@@ -71,8 +71,8 @@ export default class Drawable {
       }, Promise.resolve());
   }
 
-  toBuffer() {
-    return this._canvas.toBuffer();
+  toBuffer(...args) {
+    return this._canvas.toBuffer(...args);
   }
 
   toDataURL(...args) {

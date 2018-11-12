@@ -8,7 +8,7 @@ export default class DrawableImage {
   constructor(img, styles = {}) {
     // be able to set image buffer
     if (isBuffer(img)) {
-      this._image = new Image
+      this._image = new Image();
       this._image.src = img;
       this._dimensions = sizeOf(img);
     } else {
@@ -46,7 +46,7 @@ export default class DrawableImage {
       return {
         height: adjustedHeight,
         width: adjustedWidth,
-        left: (adjustedWidth - canvasWidth) / 2 * -1,
+        left: ((adjustedWidth - canvasWidth) / 2) * -1,
         top: 0,
       };
     } else {
@@ -55,7 +55,7 @@ export default class DrawableImage {
       return {
         height: adjustedHeight,
         width: adjustedWidth,
-        top: (adjustedHeight - canvasHeight) / 2 * -1,
+        top: ((adjustedHeight - canvasHeight) / 2) * -1,
         left: 0,
       };
     }
@@ -63,6 +63,10 @@ export default class DrawableImage {
 
   getStyleProp(prop = '') {
     return this._styles[prop] || 0;
+  }
+
+  setStyleProp(prop = '', value) {
+    this._styles[prop] = value;
   }
 
   drawImage(context, canvasStyles) {
