@@ -1,6 +1,6 @@
 {
   "name": "drawable",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "description": "A way to make styling canvas elements like text and images nicer",
   "main": "dist/index.js",
   "author": "Jacob Lowe",
@@ -12,9 +12,9 @@
     "prepublish": "npm run build"
   },
   "dependencies": {
-    "canvas": "2.0.0-alpha.4",
-    "image-size": "^0.6.1",
-    "is-buffer": "^1.1.5"
+    "canvas": "^2.10.2",
+    "image-size": "^1.0.2",
+    "is-buffer": "^2.0.5"
   },
   "devDependencies": {
     "ava": "^0.22.0",
