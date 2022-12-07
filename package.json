@@ -12,7 +12,7 @@
     "prepublish": "npm run build"
   },
   "dependencies": {
-    "canvas": "2.10.2",
+    "canvas": "^2.10.2",
     "image-size": "^0.6.1",
     "is-buffer": "^1.1.5"
   },
